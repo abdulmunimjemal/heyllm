@@ -1,0 +1,55 @@
+{
+  "name": "ask",
+  "version": "0.1.0",
+  "description": "Talk to an LLM from your terminal. A tiny, dependency-light CLI for any OpenAI-compatible API.",
+  "type": "module",
+  "bin": {
+    "ask": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "cli",
+    "llm",
+    "openai",
+    "chatgpt",
+    "ai",
+    "terminal",
+    "gpt",
+    "openrouter",
+    "ollama"
+  ],
+  "author": "Abdulmunim Jemal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulmunimjemal/ask.git"
+  },
+  "homepage": "https://oss.munim.io/ask/",
+  "bugs": {
+    "url": "https://github.com/abdulmunimjemal/ask/issues"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "typescript": "^6.0.3",
+    "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
