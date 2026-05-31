@@ -1,5 +1,5 @@
 /**
- * Pure, network-free helpers for the `ask` CLI.
+ * Pure, network-free helpers for the `heyllm` CLI.
  *
  * Everything here is deterministic and unit-tested. The only impure part of
  * the program (the HTTP/SSE call) lives in `request.ts`, and the wiring lives
@@ -26,7 +26,7 @@ export interface BuildMessagesInput {
  * Build the chat `messages` array from the prompt, piped stdin, and system
  * prompt. The prompt argument and stdin are combined into a single user
  * message: the prompt comes first (the instruction), followed by the stdin
- * (the context), so that `git diff | ask "write a commit message"` works.
+ * (the context), so that `git diff | heyllm "write a commit message"` works.
  */
 export function buildMessages(input: BuildMessagesInput): ChatMessage[] {
   const messages: ChatMessage[] = [];

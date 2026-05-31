@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The `ask` CLI entrypoint. Keeps logic thin: parse args, read stdin, dispatch
+ * The `heyllm` CLI entrypoint. Keeps logic thin: parse args, read stdin, dispatch
  * to the (testable) request module, and map errors to exit codes.
  *
  *   0  success
@@ -19,11 +19,11 @@ import {
 
 const VERSION = "0.1.0";
 
-const HELP = `${pc.bold("ask")} — talk to an LLM from your terminal
+const HELP = `${pc.bold("heyllm")} — talk to an LLM from your terminal
 
 ${pc.bold("Usage")}
-  ask [options] "your prompt"
-  command | ask [options] "instruction"
+  heyllm [options] "your prompt"
+  command | heyllm [options] "instruction"
 
 ${pc.bold("Options")}
   -m, --model <name>     Model to use (default: gpt-4o-mini)
@@ -39,10 +39,10 @@ ${pc.bold("Environment")}
   OPENAI_API_KEY         API key used when --api-key is not given
 
 ${pc.bold("Examples")}
-  ask "explain monads simply"
-  git diff | ask "write a conventional commit message"
-  ask -m gpt-4o --system "You are terse" "summarize REST"
-  ask --base-url http://localhost:11434/v1 -m llama3 "hello"
+  heyllm "explain monads simply"
+  git diff | heyllm "write a conventional commit message"
+  heyllm -m gpt-4o --system "You are terse" "summarize REST"
+  heyllm --base-url http://localhost:11434/v1 -m llama3 "hello"
 `;
 
 /** Read all of stdin if it is piped (not a TTY). Returns "" otherwise. */
@@ -88,7 +88,7 @@ async function main(): Promise<void> {
 
   const stdin = await readStdin();
   if (!parsed.prompt && !stdin.trim()) {
-    fail('no prompt given. Try: ask "your question"  (or pipe input).', 2);
+    fail('no prompt given. Try: heyllm "your question"  (or pipe input).', 2);
   }
 
   const opts: RequestOptions = {

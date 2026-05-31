@@ -1,10 +1,10 @@
 {
-  "name": "ask",
+  "name": "heyllm",
   "version": "0.1.0",
   "description": "Talk to an LLM from your terminal. A tiny, dependency-light CLI for any OpenAI-compatible API.",
   "type": "module",
   "bin": {
-    "ask": "./dist/cli.js"
+    "heyllm": "./dist/cli.js"
   },
   "files": [
     "dist"
@@ -32,11 +32,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abdulmunimjemal/ask.git"
+    "url": "git+https://github.com/abdulmunimjemal/heyllm.git"
   },
-  "homepage": "https://oss.munim.io/ask/",
+  "homepage": "https://oss.munim.io/heyllm/",
   "bugs": {
-    "url": "https://github.com/abdulmunimjemal/ask/issues"
+    "url": "https://github.com/abdulmunimjemal/heyllm/issues"
   },
   "dependencies": {
     "picocolors": "^1.1.1"
